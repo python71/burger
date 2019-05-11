@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center mb-3" id="top-bar">
+			<h1> Let's Get Ready to BURGER! </h1>
+		</div>
+		<div class="col-md-6 text-center" class="task">
+			<div class="row">
+				{{#each data}}
+				{{#unless this.devoured}}
+				<div class="col-md-9 text-center">
+					<pre>{{this.id}}. {{this.burger_name}}</pre>
+				</div>
+
+				<div class="col-md-3 text-center">
+					<form class="devour-form button-size">
+						<input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
+						<button type="submit" class="btn btn-default"><i class="fas fa-hamburger"> Taste
+								it!</i></button>
+					</form>
+				</div>
+				{{/unless}}
+				{{/each}}
+			</div>
+		</div>
+		<div class="col-md-6 text-center" class="task">
+			{{#each data}}
+			{{#if this.devoured}}
+			<pre>{{this.id}}. {{this.burger_name}}</pre>
+			{{!-- <input class="form-control mb-1" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly> --}}
+			{{/if}}
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center enter_section">
+			<form action="/burgers/create" method="POST">
+				<input type="text" class="form-control m-4" name="burger_name" value="" id="enter_text" placeholder="ENTER THE BURGER OF YOUR DREAMS">
+				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

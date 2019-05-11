@@ -1,0 +1,18 @@
+body {
+    background-image: url("../images/beast_img_2.jpg");
+}
+
+h1 {
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+pre {
+    font-size: 24px;
+    color: white;
+}
+
+form {
+    margin-top: 5%;
+}
