@@ -29,7 +29,6 @@ var orm= {
 // updateOne()
     updateOne: function(tableInput, id, cb){
         let dbQuery = `UPDATE ${tableInput} SET devoured=true WHERE ID=${id};`
-        console.log("This is updateONe")
         connection.query(dbQuery, function(err, res) {
             if (err) {
                 throw err;
